@@ -37,7 +37,7 @@ pub fn read_config() -> Config {
 pub struct Config {
     // Bitwarden connection config
     bitwarden_url: String,
-    bitwarden_admin_token: String,
+    bitwarden_admin_token: Option<String>,
     // LDAP Connection config
     ldap_host: String,
     ldap_scheme: Option<String>,
@@ -67,7 +67,7 @@ impl Config {
         self.bitwarden_url.clone()
     }
 
-    pub fn get_bitwarden_admin_token(&self) -> String {
+    pub fn get_bitwarden_admin_token(&self) -> Option<String> {
         self.bitwarden_admin_token.clone()
     }
 

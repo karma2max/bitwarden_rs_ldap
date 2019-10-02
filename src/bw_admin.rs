@@ -30,14 +30,14 @@ impl User {
 
 pub struct Client {
     url: String,
-    admin_token: String,
+    admin_token: Option<String>,
     cookie: Option<String>,
     cookie_created: Option<Instant>,
 }
 
 impl Client {
     /// Create new instance of client
-    pub fn new(url: String, admin_token: String) -> Client {
+    pub fn new(url: String, admin_token: Option<String>) -> Client {
         Client {
             url,
             admin_token,
